@@ -3,6 +3,9 @@ varnish_vmods
 
 [![Ansible Role](https://img.shields.io/ansible/role/5964.svg)](https://galaxy.ansible.com/list#/roles/5964)
 
+[![Travis CI](https://img.shields.io/travis/cleberjsantos/ansible-varnish_vmods/master.svg)](http://travis-ci.org/cleberjsantos/ansible-varnish_vmods)
+
+
 VMOD checkout from git repository and compile it.
 
 Requirements
