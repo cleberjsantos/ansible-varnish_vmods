@@ -1,0 +1,34 @@
+---
+
+- include: dependencies.yml
+
+- name: "Clone the git repository"
+  git: repo={{ item.clone_url }}
+       dest={{ item.vmod_clone | default(temp_clone) }}/{{item.vmod}}
+       version={{ item.version | default(version) }}
+       accept_hostkey=yes
+       clone=yes
+       update=yes
+  with_items: repos
+  register: clone_repo
+
+- name: "Autogen"
+  shell: "./autogen.sh chdir={{ item.vmod_clone | default(temp_clone) }}/{{item.vmod}}"
+  with_items: repos
+  when: item.autogen == True and clone_repo.changed == True
+
+- name: configure build
+  shell: "{{ configure_cmd }} --prefix={{ VMODDIR }} chdir={{ item.vmod_clone | default(temp_clone) }}/{{item.vmod}}"
+  with_items: repos
+  when: build and clone_repo.changed == True
+
+- name: make build
+  shell: "{{ make_cmd }} chdir={{ item.vmod_clone | default(temp_clone) }}/{{item.vmod}}"
+  with_items: repos
+  register: make_build
+
+- name: make install
+  sudo: yes
+  shell: "{{ makeinstall_cmd }} chdir={{ item.vmod_clone | default(temp_clone) }}/{{item.vmod}}"
+  with_items: repos
+  when: make_build.changed == True

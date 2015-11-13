@@ -1,0 +1,8 @@
+---
+
+- name: "Install dependencies for Varnish VMODs"
+  apt: name={{ item }} state=present install_recommends=yes
+  with_items:
+    - libvarnish-dev
+    - python-docutils
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'

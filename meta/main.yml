@@ -1,0 +1,15 @@
+
+---
+galaxy_info:
+  author: Cleber J Santos
+  description: VMOD checkout from git repository and compile it
+  license: GPLv2
+  min_ansible_version: 1.9
+  platforms:
+  - name: Debian
+    versions:
+    - all
+  categories:
+  - development
+  - packaging
+  - system

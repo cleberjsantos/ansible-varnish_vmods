@@ -1,0 +1,10 @@
+---
+version: HEAD
+repos: []
+temp_clone: /tmp
+VMODDIR: /usr/lib/varnish/vmods
+VARNISHSRC: 
+build: true
+configure_cmd: "./configure"
+make_cmd: make
+makeinstall_cmd: make install
