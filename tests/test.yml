@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - { role: ansible-varnish_vmods, vmod: "libvmod-header", autogen: True, clone_url: "https://github.com/varnish/libvmod-header.git", version: "4.1", tags: [vmod, varnish] }
