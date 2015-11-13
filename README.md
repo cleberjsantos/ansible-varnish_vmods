@@ -1,6 +1,8 @@
 varnish_vmods
 =============
 
+[![Ansible Role](https://img.shields.io/ansible/role/5964.svg)](https://galaxy.ansible.com/list#/roles/5964)
+
 VMOD checkout from git repository and compile it.
 
 Requirements
