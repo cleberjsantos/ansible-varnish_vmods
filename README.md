@@ -12,7 +12,7 @@ Requirements
 Role Variables
 --------------
 
-The variables that can be passed to this role with default values are as follows.
+Available variables are listed below, along with default values (see defaults/main.yml).
 
     # The version to checkout
     version: HEAD
@@ -42,6 +42,19 @@ The variables that can be passed to this role with default values are as follows
     makeinstall_cmd: make install
 
 
+Repository variables for checkout and run
+------------------------------------------
+   
+    # VMOD name
+    vmod: "libvmod-header"
+
+    # If there's autogen.sh script and then want to run
+    autogen: True # False if there's no autogen.sh script
+
+    # Where to clone from?
+    clone_url: "https://github.com/varnish/libvmod-header.git"
+
+
 Example Playbook
 -----------------
 
@@ -49,13 +62,16 @@ Example of usage:
 
     - hosts: servers
       roles:
-        - { role: cleberjsantos.varnish_vmods, tags: [vmod, varnish, cache] }
+        - { role: cleberjsantos.varnish_vmods, vmod: "libvmod-cookie", autogen: True, clone_url: "https://github.com/lkarsten/libvmod-cookie.git", version: "4.1", tags: [vmod, varnish] }
 
 
 Custom variables sample:
 ------------------------
 
+Eg. you can add custom variables in the group_vars or host_vars. 
+
     ---
+    # file: /etc/ansible/group_vars/all
     
     repos:
       - {vmod: "libvmod-cookie", autogen: True, clone_url: "https://github.com/lkarsten/libvmod-cookie.git", version: "4.1" }
