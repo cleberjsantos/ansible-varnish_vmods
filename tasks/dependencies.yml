@@ -3,8 +3,15 @@
 - name: "Install dependencies for Varnish VMODs"
   apt: name={{ item }} state=present install_recommends=yes
   with_items:
-    - libvarnish-dev
-    - libtool
     - autoconf
+    - automake
+    - autotools-dev
+    - libtool
+    - libvarnishapi1
+    - libvarnishapi-dev
+    - libvarnish-dev
+    - make
+    - pkg-config
     - python-docutils
+    
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
