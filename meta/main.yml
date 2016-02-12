@@ -1,5 +1,7 @@
 
 ---
+dependencies: []
+
 galaxy_info:
   author: Cleber J Santos
   description: VMOD checkout from git repository and compile it
