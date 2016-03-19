@@ -1,11 +1,11 @@
 varnish_vmods
 =============
 
-[![Ansible Role](https://img.shields.io/ansible/role/5964.svg)](https://galaxy.ansible.com/list#/roles/5964)
-[![Travis CI](https://img.shields.io/travis/cleberjsantos/ansible-varnish_vmods/master.svg)](http://travis-ci.org/cleberjsantos/ansible-varnish_vmods)
+[![Build Status](https://travis-ci.org/cleberjsantos/ansible-varnish_vmods.svg?branch=master)](https://travis-ci.org/cleberjsantos/ansible-varnish_vmods)
+[![Ansible Galaxy](https://img.shields.io/badge/galaxy-cleberjsantos.varnish_vmods-blue.svg)](https://galaxy.ansible.com/cleberjsantos/ansible-varnish_vmods/)
 [![Tag](https://img.shields.io/github/tag/cleberjsantos/ansible-varnish_vmods.svg)]()
 
-VMOD checkout from git repository and compile it.
+Varnish VMOD checkout from git repository and compile it.
 
 Requirements
 ------------
