@@ -13,7 +13,8 @@ galaxy_info:
   - name: Ubuntu
     versions:
     - all
-  categories:
-  - development
-  - packaging
-  - system
+  galaxy_tags:
+    - development
+    - packaging
+    - system
+dependencies: []
